@@ -1,0 +1,135 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.game {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.settings {
+    max-width: 500px;
+    margin: 0 auto 20px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #333;
+}
+
+.settings > label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+select,
+input,
+button {
+    min-height: 42px;
+    padding: 8px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    font: inherit;
+}
+
+select,
+input {
+    width: 100%;
+    background: #222;
+    color: white;
+}
+
+.setting-fields {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 14px 0;
+}
+
+.setting-fields label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    background: #3879d9;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:active {
+    background: #285eac;
+}
+
+.game-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+}
+
+#board-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 4px 0 12px;
+    -webkit-overflow-scrolling: touch;
+}
+
+#board {
+    --columns: 10;
+    --cell-size: clamp(18px, calc((100vw - 32px) / var(--columns)), 32px);
+
+    display: grid;
+    grid-template-columns: repeat(var(--columns), var(--cell-size));
+    width: max-content;
+    margin: 0 auto;
+    touch-action: manipulation;
+}
+
+#board img {
+    display: block;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .settings {
+        padding: 12px;
+    }
+
+    .setting-fields {
+        gap: 6px;
+    }
+
+    .setting-fields label {
+        font-size: 12px;
+    }
+
+    .game-info {
+        gap: 0 12px;
+        font-size: 14px;
+    }
+}
