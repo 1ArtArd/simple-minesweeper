@@ -22,7 +22,7 @@ let picture = []
 let tiles = []
 
 const presets = {
-    easy: { rows: 8, columns: 10, bombs: 8 },
+    easy: { rows: 8, columns: 10, bombs: 5 },
     medium: { rows: 12, columns: 15, bombs: 30 },
     hard: { rows: 16, columns: 20, bombs: 60 }
 }
