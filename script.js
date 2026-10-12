@@ -11,8 +11,8 @@ const startButton = document.getElementById("startButton")
 
 let rows = 8
 let columns = 10
-let bombs = 10
-let remaining = 10
+let bombs = 5
+let remaining = 5
 let revealed = 0
 let firstMove = true
 let gameOver = false
